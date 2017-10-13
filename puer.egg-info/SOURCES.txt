@@ -13,6 +13,10 @@ puer.egg-info/dependency_links.txt
 puer.egg-info/entry_points.txt
 puer.egg-info/requires.txt
 puer.egg-info/top_level.txt
+puer/example/__init__.py
+puer/example/manage.py
+puer/example/modules/__init__.py
+puer/example/modules/database_connection.py
 puer/puer_init/__init__.py
 puer/scripts/__init__.py
 puer/scripts/run.py
