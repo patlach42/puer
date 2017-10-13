@@ -1,0 +1,10 @@
+apps: 
+  - apps.base
+middlewares: []
+signals: []
+host:
+  ip: 127.0.0.1
+  port: 8080
+
+modules:
+  - modules.database_connection.DBConnection
