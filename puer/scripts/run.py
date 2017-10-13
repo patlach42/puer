@@ -40,7 +40,7 @@ class RunServer(AbstractScript):
 
         # Setting signals for app
         for signal in settings.signals:
-            app_signals = getattr(self.manager.aiohttp_app, signal)
+            app_signals = getattr(app, signal)
             for app_signal in settings.signals[signal]:
                 app_signal_path = app_signal.split('.')
                 package_name = '.'.join(app_signal_path[:-1])
@@ -51,7 +51,7 @@ class RunServer(AbstractScript):
         # Setting routes for app
         for res in routes:
             name = res[3]
-            self.manager.aiohttp_app.router.add_route(res[0], res[1], res[2], name=name)
+            app.router.add_route(res[0], res[1], res[2], name=name)
 
         run_app(
             app,
