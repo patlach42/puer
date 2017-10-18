@@ -1,6 +1,3 @@
-import abc
-
-
 class AbstractModule(object):
     name = "abstract"
     value = None

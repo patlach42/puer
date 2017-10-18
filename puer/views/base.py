@@ -1,7 +1,7 @@
 import asyncio
 import aiohttp.abc
 import aiohttp.web
-from bson.json_util import dumps
+from json import dumps
 
 from aiohttp import hdrs
 from aiohttp.web_exceptions import HTTPMethodNotAllowed
@@ -15,6 +15,10 @@ class Response(aiohttp.web.Response):
 
 
 class View(aiohttp.abc.AbstractView):
+    def __init__(self, request):
+        super().__init__(request)
+        self.app = request.app
+
     @asyncio.coroutine
     def __iter__(self):
         if self.request._method not in hdrs.METH_ALL:
