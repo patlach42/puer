@@ -2,4 +2,4 @@ from .application import *
 from .core import *
 
 
-__version__ = '0.4.3'
+__version__ = '0.4.5'
