@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: puer
+Version: 0.4.9
+Home-page: https://github.com/patlach42
+Author: Maxim Fedotov (@patlach)
+Author-email: f42.dobro@gmail.com
+License: GNU/GPL
+Description: Description
+        ===========
+
+        An another aiohttp-based web-framework

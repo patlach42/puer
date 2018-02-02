@@ -1,3 +1,0 @@
-[console_scripts]
-puer_init = puer.puer_init:main
-

@@ -63,6 +63,12 @@ class Manager(object):
             middlewares=middlewares
         )
         app["settings"] = self.settings
+
+        # Setting routes for app
+        for res in routes:
+            name = res[3]
+            app.router.add_route(res[0], res[1], res[2], name=name)
+
         for m in self.settings.modules:
             module_splitted = m.split('.')
             package_name = '.'.join(module_splitted[0:-1])
@@ -83,10 +89,5 @@ class Manager(object):
                 app_signal_name = app_signal_path[-1:][0]
                 import_module(package_name)
                 app_signals.append(getattr(modules[package_name], app_signal_name))
-
-        # Setting routes for app
-        for res in routes:
-            name = res[3]
-            app.router.add_route(res[0], res[1], res[2], name=name)
 
         self.application = app
